@@ -1,7 +1,7 @@
 {
-  "name": "Google Translator",
+  "name": "open_translator",
   "version": "1.0.0",
-  "description": "webnovel crawler",
+  "description": "translator",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
