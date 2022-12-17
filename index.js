@@ -1,6 +1,6 @@
 const express = require('express');
 const translate = require('@iamtraction/google-translate');
-
+const localtunnel = require('localtunnel');
 const app = express();
 
 // Parse JSON payload of the request
@@ -52,3 +52,14 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
 });
+(async () => {
+    const tunnel = await localtunnel({ port: 3000 });
+  
+    // the assigned public url for your tunnel
+    // i.e. https://abcdefgjhij.localtunnel.me
+    console.log( tunnel.url);
+  
+    tunnel.on('close', () => {
+      // tunnels are closed
+    });
+  })();
